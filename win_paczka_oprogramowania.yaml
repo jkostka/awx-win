@@ -23,7 +23,16 @@
         name: vlc
         state: present
 
+    - name: Install teamviewer-qs
+      win_chocolatey:
+        name: teamviewer-qs
+        state: present
+
     - name: Install forticlientvpn
       win_chocolatey:
         name: forticlientvpn
         state: present
+
+
+
+        
