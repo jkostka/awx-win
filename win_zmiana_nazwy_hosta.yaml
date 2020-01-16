@@ -4,8 +4,8 @@
   gather_facts: false
   tasks:
      - name: Zmiana nazwy hosta
-        win_hostname:
+        win_hostname: v-win10
         name: awxwin10
-        
+
     - win_reboot:
       when: result.reboot_required
