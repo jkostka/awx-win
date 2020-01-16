@@ -6,3 +6,6 @@
      - name: Zmiana nazwy hosta
         win_hostname:
         name: awxwin10
+        
+    - win_reboot:
+      when: result.reboot_required
