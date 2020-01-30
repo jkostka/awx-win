@@ -1,10 +1,13 @@
 ---
 - name: Download and run ConfigureRemotingForAnsible.ps1 to setup WinRM
-  psexec:
-  encrypt: yes
-  executable: powershell.exe
-  arguments: '-'
-    stdin: |
+  hosts: all
+  gather_facts: false
+  taks:
+    - psexec:
+      encrypt: yes
+      executable: powershell.exe
+      arguments: '-'
+        stdin: |
       $ErrorActionPreference = "Stop"
       $sec_protocols = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::SystemDefault
       $sec_protocols = $sec_protocols -bor [Net.SecurityProtocolType]::Tls12
@@ -12,4 +15,4 @@
       $url = "https://github.com/ansible/ansible/raw/devel/examples/scripts/ConfigureRemotingForAnsible.ps1"
       Invoke-Expression ((New-Object Net.WebClient).DownloadString($url))
       exit
-  delegate_to: localhost
+      delegate_to: localhost
