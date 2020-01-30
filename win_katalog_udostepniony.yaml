@@ -7,7 +7,7 @@
       # Nazwa katalogu w sieci
         name: test2
         description: Katalog udostepniony
-        # Lokalizacja katalogu na komputerze
+        # Lokalizacja katalogu na komputerze (katalog musi istnieć)
         path: C:\shares\company1
         list: yes
         # Uprawnienia (per użytkownik)
