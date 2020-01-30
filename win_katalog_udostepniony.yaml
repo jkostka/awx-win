@@ -9,4 +9,4 @@
         path: C:\shares\company
         list: yes
         full: Administrators
-        read: Users
+        read: ansible
