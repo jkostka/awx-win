@@ -3,5 +3,6 @@
   hosts: all
   gather_facts: false
   tasks: 
-      shell: WMIC computersystem where caption='v-win10' rename win10awx
-      register: output
+  - executable: cmd.exe
+    arguments: WMIC computersystem where caption='v-win10' rename win10awx
+    register: output
