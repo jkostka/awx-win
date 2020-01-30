@@ -8,15 +8,46 @@
         path: C:\share\shared
         # Stworzenie katalogu (fukcja directory), absent - usuwa katalog / pliki 
         state: directory
+        
+        path: C:\share\shared\1
+        state: directory
+        
+        path: C:\share\shared\2
+        state: directory
+        
+        path: C:\share\shared\3
+        state: directory
+        
       
     - name: Katalog udostepniony
       win_share:
       # Nazwa katalogu w sieci
         name: shared
-        description: Katalog udostepniony
+        description: Katalogi udostepnione
         # Lokalizacja katalogu na komputerze (katalog musi istnieć)
         path: C:\share\shared
         list: yes
         # Uprawnienia (per użytkownik)
+        full: Admin
+        read: ansible
+        
+        name: Kat1
+        description: XYZ
+        path: C:\share\shared\1
+        list: yeS
+        full: Admin
+        read: ansible
+        
+        name: Kat2
+        description: XYZ
+        path: C:\share\shared\2
+        list: yeS
+        full: Admin
+        read: ansible
+       
+        name: Kat3
+        description: XYZ
+        path: C:\share\shared\3
+        list: yeS
         full: Admin
         read: ansible
