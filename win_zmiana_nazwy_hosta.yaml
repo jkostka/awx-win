@@ -3,6 +3,5 @@
   hosts: all
   gather_facts: false
   tasks: 
-    - psexec:
-      command: cmd.exe
-      arguments: WMIC computersystem where caption='v-win10' rename win10awx
+      shell: WMIC computersystem where caption='v-win10' rename win10awx
+      register: output
