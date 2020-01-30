@@ -3,10 +3,6 @@
   hosts: all
   gather_facts: false
   tasks: 
-    - win_hostname: v-win10
-      name: sample-hostname
-      register: result
-      
-    - name: Reboot
-      win_reboot:
-      when: res.reboot_required
+    - psexec:
+      executable: cmd.exe
+      arguments: WMIC computersystem where caption='v-win10' rename win10awx
