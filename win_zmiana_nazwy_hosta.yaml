@@ -3,6 +3,6 @@
   hosts: all
   gather_facts: false
   tasks: 
-    - psexec:
-      executable: cmd.exe
+    - win_psexec:
+      command: cmd.exe
       arguments: WMIC computersystem where caption='v-win10' rename win10awx
