@@ -33,7 +33,7 @@
         path: C:\share\shared
         list: yes
         # Uprawnienia (per użytkownik)
-        full: Admin
+        full: Użytkownicy
         read: ansible
        
     - name: Udostepnie katalogu 1 jako Kat1
