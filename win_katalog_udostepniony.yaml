@@ -1,9 +1,12 @@
 ---
-- name: Katalog udostepniony
-  win_share:
-    name: test1
-    description: Katalog udostepniony
-    path: C:\shares\company
-    list: yes
-    full: Administrators
-    read: Global
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: Katalog udostepniony
+      win_share
+      name: test1
+      description: Katalog udostepniony
+      path: C:\shares\company
+      list: yes
+      full: Administrators
+      read: Global
