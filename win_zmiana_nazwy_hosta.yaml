@@ -3,7 +3,7 @@
   hosts: all
   gather_facts: false
   tasks: 
-    - win_hostname:
+    - win_hostname: v-win10
       name: sample-hostname
       register: result
       
