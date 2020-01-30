@@ -4,8 +4,8 @@
   tasks:
     - name: Create directory structure
       win_file:
-      path: C:\shares\company1
-      state: directory
+        path: C:\shares\company1
+        state: directory
       
     - name: Katalog udostepniony
       win_share:
