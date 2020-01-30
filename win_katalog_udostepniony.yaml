@@ -33,8 +33,8 @@
         path: C:\share\shared
         list: yes
         # Uprawnienia (per użytkownik)
-        full: Użytkownicy
-        read: ansible
+        full: Admin
+        read: BUILTIN\Użytkownicy
        
     - name: Udostepnie katalogu 1 jako Kat1
       win_share:
@@ -43,7 +43,7 @@
         path: C:\share\shared\1
         list: yeS
         full: Admin
-        read: ansible
+        read: BUILTIN\Użytkownicy
         
     - name: Udostepnienie katalogu 2 jako Kat2
       win_share:
@@ -52,7 +52,7 @@
         path: C:\share\shared\2
         list: yeS
         full: Admin
-        read: ansible
+        read: BUILTIN\Użytkownicy
         
     - name: Udostepnienie katalogu 3 jako Kat3
       win_share:
@@ -61,4 +61,4 @@
         path: C:\share\shared\3
         list: yeS
         full: Admin
-        read: ansible
+        read: BUILTIN\Użytkownicy
