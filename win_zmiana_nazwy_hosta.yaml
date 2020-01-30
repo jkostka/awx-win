@@ -10,4 +10,4 @@
       
     - name: Reboot
       win_reboot:
-      when: res.reboot_required
+      when: result.reboot_required
