@@ -2,38 +2,41 @@
 - hosts: all
   gather_facts: false
   tasks:
-    - name: Create directory structure
+    - name: Zakladam katalog shared
       win_file:
       # Struktura katalogów
         path: C:\share\shared
         # Stworzenie katalogu (fukcja directory), absent - usuwa katalog / pliki 
         state: directory
-        
+    - name: Zakladam Katalog 1 
       win_file:
         path: C:\share\shared\1
         state: directory
         
+    - name: Zakladam Katalog 2    
       win_file:
         path: C:\share\shared\2
         state: directory
         
+    - name: Zakladama Katalog 3 
       win_file:
         path: C:\share\shared\3
         state: directory
         
       
-    - name: Katalog udostepniony
+    - name: Udostepnienie katalogu shared
       win_share:
       # Nazwa katalogu w sieci
         name: shared
-        description: Katalogi udostepnione
+        description: XYZ
         # Lokalizacja katalogu na komputerze (katalog musi istnieć)
         path: C:\share\shared
         list: yes
         # Uprawnienia (per użytkownik)
         full: Admin
         read: ansible
-        
+       
+    - name: Udostepnie katalogu 1 jako Kat1
       win_share:
         name: Kat1
         description: XYZ
@@ -42,6 +45,7 @@
         full: Admin
         read: ansible
         
+    - name: Udostepnienie katalogu 2 jako Kat2
       win_share:
         name: Kat2
         description: XYZ
@@ -50,6 +54,7 @@
         full: Admin
         read: ansible
         
+    - name: Udostepnienie katalogu 3 jako Kat3
       win_share:
         name: Kat3
         description: XYZ
