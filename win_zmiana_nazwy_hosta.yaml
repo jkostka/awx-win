@@ -2,7 +2,11 @@
 - name: Change the hostname to sample-hostname
   hosts: all
   gather_facts: false
-  tasks: 
-    executable: cmd.exe
-    arguments: WMIC computersystem where caption='v-win10' rename win10awx
-    register: output
+  taks: 
+    - win_hostname:
+      name: sample-hostname
+      register: result
+      
+    - name: Reboot
+      win_reboot:
+      when: res.reboot_required
