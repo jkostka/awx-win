@@ -4,9 +4,12 @@
   tasks:
     - name: Katalog udostepniony
       win_share:
+      # Nazwa katalogu w sieci
         name: test1
         description: Katalog udostepniony
-        path: C:\shares\company
+        # Lokalizacja katalogu na komputerze
+        path: C:\shares\company1
         list: yes
+        # Uprawnienia (per użytkownik)
         full: Admin
         read: ansible
