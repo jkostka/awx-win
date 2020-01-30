@@ -1,7 +1,11 @@
-
- win_shell: WMIC computersystem where caption='v-win10' rename win10awx 
- shutdown -r
-  args:
-    executable: cmd
+---
+- name: Change the hostname to sample-hostname
+  hosts: all
+  gather_facts: false
+    tasks:
+      win_shell: WMIC computersystem where caption='v-win10' rename win10awx 
+      shutdown -r
+      args:
+      executable: cmd
 
 
