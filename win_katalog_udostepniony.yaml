@@ -4,16 +4,18 @@
   tasks:
     - name: Create directory structure
       win_file:
-        path: C:\shares\company1
+      # Struktura katalogów
+        path: C:\share\shared
+        # Stworzenie katalogu (fukcja directory), absent - usuwa katalog / pliki 
         state: directory
       
     - name: Katalog udostepniony
       win_share:
       # Nazwa katalogu w sieci
-        name: test2
+        name: shared
         description: Katalog udostepniony
         # Lokalizacja katalogu na komputerze (katalog musi istnieć)
-        path: C:\shares\company1
+        path: C:\share\shared
         list: yes
         # Uprawnienia (per użytkownik)
         full: Admin
