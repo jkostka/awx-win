@@ -1,5 +1,5 @@
 ---
 - name: Run a cmd.exe command
-    psexec:
-      executable: cmd.exe
-      arguments: WMIC computersystem where caption='v-win10' rename win10awx
+  psexec:
+    executable: cmd.exe
+    arguments: WMIC computersystem where caption='v-win10' rename win10awx
