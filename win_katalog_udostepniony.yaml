@@ -9,12 +9,15 @@
         # Stworzenie katalogu (fukcja directory), absent - usuwa katalog / pliki 
         state: directory
         
+       win_file:
         path: C:\share\shared\1
         state: directory
         
+       win_file:
         path: C:\share\shared\2
         state: directory
         
+       win_file:
         path: C:\share\shared\3
         state: directory
         
@@ -31,6 +34,7 @@
         full: Admin
         read: ansible
         
+       win_share:
         name: Kat1
         description: XYZ
         path: C:\share\shared\1
@@ -38,13 +42,15 @@
         full: Admin
         read: ansible
         
+       win_share:
         name: Kat2
         description: XYZ
         path: C:\share\shared\2
         list: yeS
         full: Admin
         read: ansible
-       
+        
+      win_share:
         name: Kat3
         description: XYZ
         path: C:\share\shared\3
