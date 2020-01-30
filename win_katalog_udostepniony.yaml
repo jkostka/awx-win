@@ -8,5 +8,5 @@
         description: Katalog udostepniony
         path: C:\shares\company
         list: yes
-        full: Administrators
+        full: Admin
         read: ansible
