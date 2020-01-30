@@ -5,7 +5,7 @@
     - name: Katalog udostepniony
       win_share:
       # Nazwa katalogu w sieci
-        name: test1
+        name: test2
         description: Katalog udostepniony
         # Lokalizacja katalogu na komputerze
         path: C:\shares\company1
