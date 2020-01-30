@@ -34,6 +34,7 @@
         list: yes
         # Uprawnienia (per użytkownik)
         full: Admin
+        # Nazwy użytkowników zgodnie z listą gpresult /r
         read: BUILTIN\Użytkownicy
        
     - name: Udostepnie katalogu 1 jako Kat1
