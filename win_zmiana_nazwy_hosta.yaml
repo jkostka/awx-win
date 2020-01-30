@@ -3,8 +3,9 @@
   hosts: all
   gather_facts: false
   tasks: 
-    - win_hostname:
-      name: v-win-awx
+    - name: Change the hostname to sample-hostname
+      win_hostname:
+        name: v-win-awx
       register: result
       
     - name: Reboot
