@@ -28,7 +28,6 @@
       
     - name: Reboot
       win_reboot:
-      when: result.reboot_required
       
     - name: Install AdobeReader
       win_chocolatey:
