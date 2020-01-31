@@ -4,11 +4,9 @@
   tasks:
     - name: Zakladam konto test
       win_user:
-        name: test
+        name: test1
         password: admin!123
         state: present
-        # Expires -1 - hasło nigdy nie wygasa
-        expires: -1
+        password_never_expires: true
         groups:
-          - Administratorzy
           - Użytkownicy
