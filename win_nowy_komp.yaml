@@ -12,7 +12,7 @@
           - Użytkownicy
           - Administratorzy
           
-    - name: Running Windows Update
+    - name: Aktualizuje Windowsa
       win_updates:
         category_names: ['SecurityUpdates','CriticalUpdates','UpdateRollups', 'Updates', 'DefinitionUpdates']
         #category_names: ['SecurityUpdates']
@@ -24,7 +24,7 @@
     - win_reboot:
       when: result.reboot_required
  
-    - name: Change the hostname to sample-hostname
+    - name: Zmieniam nazwę hosta na v-win-awx2
             win_hostname:
             name: v-win-awx2
             register: result
