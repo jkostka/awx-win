@@ -1,0 +1,59 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: Zakladam konto ansible
+      win_user:
+        name: ansible
+        password: admin!123
+        state: present
+        password_never_expires: true
+        groups:
+          - Użytkownicy
+          - Administratorzy
+          
+    - name: Running Windows Update
+      win_updates:
+        category_names: ['SecurityUpdates','CriticalUpdates','UpdateRollups', 'Updates', 'DefinitionUpdates']
+        #category_names: ['SecurityUpdates']
+        register: result
+        #output results
+          - debug: var=result
+       #reboot only if required
+       
+    - win_reboot:
+      when: result.reboot_required
+ 
+    - name: Change the hostname to sample-hostname
+            win_hostname:
+            name: v-win-awx2
+            register: result
+      
+    - name: Reboot
+      win_reboot:
+      when: result.reboot_required
+      
+    - name: Install AdobeReader
+      win_chocolatey:
+        name: adobereader
+        state: present
+
+    - name: Install OpenOffice
+      win_chocolatey:
+        name: openoffice
+        state: present
+
+    - name: Install 7zip
+      win_chocolatey:
+        name: 7zip
+        state: present
+
+    - name: Install VLC
+      win_chocolatey:
+        name: vlc
+        state: present
+
+    - name: Install forticlientvpn
+      win_chocolatey:
+        name: forticlientvpn
+        state: present
