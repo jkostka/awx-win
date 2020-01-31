@@ -2,11 +2,12 @@
 - hosts: all
   gather_facts: false
   tasks:
-    - name: Zakladam konto test
+    - name: Zakladam konto ansible
       win_user:
-        name: test1
+        name: ansible
         password: admin!123
         state: present
         password_never_expires: true
         groups:
           - Użytkownicy
+          - Administratorzy
