@@ -2,11 +2,13 @@
 - hosts: all
   gather_facts: false
   tasks:
-    - name: Zakladam konto Ansible
+    - name: Zakladam konto test
       win_user:
-        name: ansible
+        name: test
         password: admin!123
         state: present
+        # Expires -1 - hasło nigdy nie wygasa
         expires: -1
         groups:
           - Administratorzy
+          - Użytkownicy
