@@ -2,7 +2,7 @@
 - hosts: all
   gather_facts: false
   tasks:
-    - name: Ensure user bob is present
+    - name: Zakladam konto Ansible
       win_user:
         name: ansible
         password: admin!123
