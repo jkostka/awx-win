@@ -15,11 +15,8 @@
     - name: Aktualizuje Windowsa
       win_updates:
         category_names: ['SecurityUpdates','CriticalUpdates','UpdateRollups', 'Updates', 'DefinitionUpdates']
-        #category_names: ['SecurityUpdates']
-        register: result
-        #output results
-          - debug: var=result
-       #reboot only if required
+      register: result
+    - debug: var=result
        
     - win_reboot:
       when: result.reboot_required
