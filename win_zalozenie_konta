@@ -8,4 +8,4 @@
         password: admin!123
         state: present
         groups:
-          - Administrators
+          - Administratorzy
