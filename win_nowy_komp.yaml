@@ -22,9 +22,9 @@
       when: result.reboot_required
  
     - name: Zmieniam nazwę hosta na v-win-awx2
-            win_hostname:
-            name: v-win-awx2
-            register: result
+      win_hostname:
+        name: v-win-awx2
+        register: result
       
     - name: Reboot
       win_reboot:
