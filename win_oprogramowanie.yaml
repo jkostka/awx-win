@@ -4,10 +4,43 @@
   gather_facts: false
   tasks:
 
-    - name: Instaluje OpenOffice z katalogu Software
+    - name: Zakladam Katalog Software
+      win_file:
+        path: C:\Software
+        state: directory
+
+    - name: Pobieram 7zip do katalogu Software
+      win_get_url:
+        url: https://www.7-zip.org/a/7z1701-x64.msi
+        dest: C:\Software\7z.msi
+
+    - name: Instaluje 7zip z katalogu Software
+      win_package:
+        path: C:\Software\7z.msi
+        state: present
+
+    - name: Pobieram AdobeReaderDC do katalogu Software
+      win_get_url:
+        url: http://ardownload.adobe.com/pub/adobe/reader/win/AcrobatDC/1900820071/AcroRdrDC1900820071_pl_PL.exe
+        dest: C:\Software\AcroRdrDC1900820071_pl_PL.exe
+
+    - name: Instaluje AdobeReaderDC z katalogu Software
       win_package:
         path: C:\Software\AcroRdrDC1900820071_pl_PL.exe
         product_id: auto
         state: present
+
+    - name: Pobieram OpenOffice do katalogu Software
+      win_get_url:
+        url: https://sourceforge.net/projects/openofficeorg.mirror/files/4.1.7/binaries/pl/Apache_OpenOffice_4.1.7_Win_x86_install_pl.exe/download
+        dest: C:\Software\Apache_OpenOffice_4.1.7_Win_x86_install_pl.exe
+
+    - name: Instaluje OpenOffice z katalogu Software
+      win_package:
+        path: C:\Software\Apache_OpenOffice_4.1.7_Win_x86_install_pl.exe
+        product_id: auto
+        state: present
+
+
 
   
