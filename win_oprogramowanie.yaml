@@ -1,0 +1,21 @@
+---
+- name:  Windows Update
+  hosts: all
+  gather_facts: false
+  tasks:
+
+    - name: Zakladam Katalog Software
+      win_file:
+        path: C:\Software
+        state: directory
+
+    - name: Pobieram 7zip do katalogu Software
+      win_get_url:
+        url: https://www.7-zip.org/a/7z1701-x64.msi
+        dest: C:\Software\7z.msi
+
+    - name: Instaluje 7zip z katalogu Software
+      win_package:
+        path: C:\Software\7z.msi
+        state: present
+  
