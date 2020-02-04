@@ -5,9 +5,9 @@
   tasks:
   
      - name: Instaluje Java
-      win_chocolatey:
-        name: javaruntime
-        state: present
+       win_chocolatey:
+         name: javaruntime
+         state: present
   
     -name: Instaluje 7zip
       win_chocolatey:
