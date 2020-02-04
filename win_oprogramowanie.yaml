@@ -27,7 +27,9 @@
     - name: Instaluje AdobeReaderDC z katalogu Software
       win_package:
         path: C:\Software\AcroRdrDC1900820071_pl_PL.exe
+        #przy aplikacjach typu .exe musi być product_id
         product_id: auto
+        #present - instalowanie absent - odinstalowywanie
         state: present
 
     - name: Pobieram OpenOffice do katalogu Software
