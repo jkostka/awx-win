@@ -4,7 +4,7 @@
   gather_facts: false
   tasks:
   
-  - name: Instauluje Java
+  - name: Instaluje Java
     win_chocolatey:
       name: javaruntime
       state: present
