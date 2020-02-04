@@ -29,27 +29,13 @@
     - name: Reboot
       win_reboot:
       
-    - name: Install AdobeReader
-      win_chocolatey:
-        name: adobereader
-        state: present
-
-    - name: Install OpenOffice
-      win_chocolatey:
-        name: openoffice
-        state: present
-
-    - name: Install 7zip
-      win_chocolatey:
-        name: 7zip
-        state: present
-
-    - name: Install VLC
-      win_chocolatey:
-        name: vlc
-        state: present
-
-    - name: Install forticlientvpn
-      win_chocolatey:
-        name: forticlientvpn
+    - name: Pobieram Ninite do katalogu Software
+      win_get_url:
+        url: https://ninite.com/7zip-firefox-malwarebytes-openoffice-putty-skype-teamviewer15-vlc/ninite.exe
+        dest: C:\Software\ninite.exe
+        
+    - name: Instaluje Ninite z katalogu Software
+      win_package:
+        path: C:\Software\ninite.exe
+        product_id: auto
         state: present
