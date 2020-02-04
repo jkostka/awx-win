@@ -9,7 +9,7 @@
       name: javaruntime
       state: present
   
-    - name: Instauluje 7zip
+    - name: Instaluje 7zip
       win_chocolatey:
         name: 7zip
         state: present
