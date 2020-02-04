@@ -28,4 +28,7 @@
     - name: Instaluje OpenOffice z katalogu Software
       win_package:
         path: C:\Software\OpenOffice.exe
+        product_id: OpenOffice
         state: present
+
+  
