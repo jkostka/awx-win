@@ -19,6 +19,16 @@
         path: C:\Software\7z.msi
         state: present
 
+    - name: Pobieram Firefox do katalogu Software
+      win_get_url:
+        url: https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=pl
+        dest: C:\Software\firefox.msi
+
+    - name: Instaluje Firefox z katalogu Software
+      win_package:
+        path: C:\Software\firefox.msi
+        state: present
+
     - name: Pobieram AdobeReaderDC do katalogu Software
       win_get_url:
         url: http://ardownload.adobe.com/pub/adobe/reader/win/AcrobatDC/1900820071/AcroRdrDC1900820071_pl_PL.exe
@@ -27,9 +37,40 @@
     - name: Instaluje AdobeReaderDC z katalogu Software
       win_package:
         path: C:\Software\AcroRdrDC1900820071_pl_PL.exe
-        #przy aplikacjach typu .exe musi być product_id
         product_id: auto
-        #present - instalowanie absent - odinstalowywanie
+        state: present
+
+    - name: Pobieram Java do katalogu Software
+      win_get_url:
+        url: https://javadl.oracle.com/webapps/download/AutoDL?BundleId=241534_1f5b5a70bf22433b84d0e960903adac8
+        dest: C:\Software\java.exe
+
+    - name: Instaluje Java z katalogu Software
+      win_package:
+        path: C:\Software\java.exe
+        product_id: auto
+        state: present
+
+    - name: Pobieram VLC 3.0.8. do katalogu Software
+      win_get_url:
+        url: https://ftp.icm.edu.pl/pub/video/vlc/vlc/3.0.8/win64/vlc-3.0.8-win64.exe
+        dest: C:\Software\vlc.exe
+
+    - name: Instaluje VLC 3.0.8. z katalogu Software
+      win_package:
+        path: C:\Software\vlc.exe
+        product_id: auto
+        state: present
+
+    - name: Pobieram FortiClient do katalogu Software
+      win_get_url:
+        url: https://filestore.fortinet.com/forticlient/downloads/FortiClientVPNOnlineInstaller_6.2.exe
+        dest: C:\Software\forticlient.exe
+
+    - name: Instaluje FortiClient z katalogu Software
+      win_package:
+        path: C:\Software\forticlient.exe
+        product_id: auto
         state: present
 
     - name: Pobieram OpenOffice do katalogu Software
@@ -42,7 +83,3 @@
         path: C:\Software\Apache_OpenOffice_4.1.7_Win_x86_install_pl.exe
         product_id: auto
         state: present
-
-
-
-  
