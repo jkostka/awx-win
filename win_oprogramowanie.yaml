@@ -20,14 +20,12 @@
         path: C:\Software\7z.msi
         state: present
 
-    - name: Pobieram AdobeReader do katalogu Software
+    - name: Pobieram OpenOffice do katalogu Software
       win_get_url:
-        url: http://ardownload.adobe.com/pub/adobe/reader/win/AcrobatDC/1900820071/AcroRdrDC1900820071_pl_PL.exe
-        dest: C:\Software\AcroRdrDC1900820071_pl_PL.exe
+        url: https://sourceforge.net/projects/openofficeorg.mirror/files/latest/download
+        dest: C:\Software\OpenOffice.exe
 
-    - name: Instaluje AdobeReader z katalogu Software
+    - name: Instaluje OpenOffice z katalogu Software
       win_package:
-        path: C:\Software\AcroRdrDC1900820071_pl_PL.exe
+        path: C:\Software\OpenOffice.exe
         state: present
-
-  
