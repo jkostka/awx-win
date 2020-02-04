@@ -17,7 +17,7 @@
     - name: Instaluje Ninite z katalogu Software
       win_package:
         path: C:\Software\ninite.exe
-         product_id: auto
+        product_id: auto
         state: present
 
 
