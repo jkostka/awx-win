@@ -21,13 +21,15 @@
     - win_reboot:
       when: result.reboot_required
  
-    - name: Zmieniam nazwę hosta na v-win-awx2
+    - name: Zmieniam nazwę hosta na v-win-awx3
       win_hostname:
-        name: v-win-awx2
+        name: v-win-awx3
         register: result
-      
-    - name: Reboot
-      win_reboot:
+            
+    - name: Zakladam Katalog Software
+      win_file:
+        path: C:\Software
+        state: directory   
       
     - name: Pobieram Ninite do katalogu Software
       win_get_url:
@@ -39,3 +41,6 @@
         path: C:\Software\ninite.exe
         product_id: auto
         state: present
+        
+    - name: Reboot
+      win_reboot:
