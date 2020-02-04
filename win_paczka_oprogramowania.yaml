@@ -4,10 +4,10 @@
   gather_facts: false
   tasks:
   
-     - name: Instaluje Java
-       win_chocolatey:
-         name: javaruntime
-         state: present
+    - name: Instaluje Java
+      win_chocolatey:
+        name: javaruntime
+        state: present
   
     - name: Instaluje 7zip
       win_chocolatey:
@@ -33,7 +33,3 @@
       win_chocolatey:
         name: forticlientvpn
         state: present
-
-
-
-        
