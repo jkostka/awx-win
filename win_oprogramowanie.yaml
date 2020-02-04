@@ -9,6 +9,18 @@
         path: C:\Software
         state: directory
 
+    - name: Pobieram Ninite do katalogu Software
+      win_get_url:
+        url: https://ninite.com/7zip-firefox-malwarebytes-openoffice-putty-skype-teamviewer15-vlc/ninite.exe
+        dest: C:\Software\ninite.exe
+        
+    - name: Instaluje Ninite z katalogu Software
+      win_package:
+        path: C:\Software\ninite.exe
+         product_id: auto
+        state: present
+
+
     - name: Pobieram 7zip do katalogu Software
       win_get_url:
         url: https://www.7-zip.org/a/7z1701-x64.msi
