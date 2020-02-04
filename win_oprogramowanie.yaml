@@ -49,6 +49,7 @@
       win_package:
         path: C:\Software\java.exe
         product_id: auto
+        arguments: /S 
         state: present
 
     - name: Pobieram VLC 3.0.8. do katalogu Software
