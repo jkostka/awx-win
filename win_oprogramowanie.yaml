@@ -9,6 +9,7 @@
         path: C:\Software
         state: directory
 
+
     - name: Pobieram 7zip do katalogu Software
       win_get_url:
         url: https://www.7-zip.org/a/7z1701-x64.msi
@@ -21,12 +22,12 @@
 
     - name: Pobieram AdobeReader do katalogu Software
       win_get_url:
-        url: https://get.adobe.com/reader/modal/?content=readerhelp&loc=pl&fakeajax
-        dest: C:\Software\7z.msi
+        url: http://ardownload.adobe.com/pub/adobe/reader/win/AcrobatDC/1900820071/AcroRdrDC1900820071_pl_PL.exe
+        dest: C:\Software\AcroRdrDC1900820071_pl_PL.exe
 
     - name: Instaluje AdobeReader z katalogu Software
       win_package:
-        path: C:\Software\7z.msi
+        path: C:\Software\AcroRdrDC1900820071_pl_PL.exe
         state: present
 
   
