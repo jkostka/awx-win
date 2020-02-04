@@ -1,5 +1,5 @@
 ---
-- name:  Windows Update
+- name:  Aktualizuje system
   hosts: all
   gather_facts: false
   tasks:
