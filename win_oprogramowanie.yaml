@@ -18,4 +18,15 @@
       win_package:
         path: C:\Software\7z.msi
         state: present
+
+    - name: Pobieram AdobeReader do katalogu Software
+      win_get_url:
+        url: https://get.adobe.com/reader/modal/?content=readerhelp&loc=pl&fakeajax
+        dest: C:\Software\7z.msi
+
+    - name: Instaluje AdobeReader z katalogu Software
+      win_package:
+        path: C:\Software\7z.msi
+        state: present
+
   
