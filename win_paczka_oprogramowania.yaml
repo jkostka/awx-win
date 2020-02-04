@@ -3,27 +3,33 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: 7zip
+  
+  - name: Instauluje Java
+    win_chocolatey:
+      name: javaruntime
+      state: present
+  
+    - name: Instauluje 7zip
       win_chocolatey:
         name: 7zip
         state: present
 
-    - name: Install OpenOffice
+    - name: Installuje OpenOffice
       win_chocolatey:
         name: openoffice
         state: present
 
-    - name: Adobe Reader
+    - name: Instauluje AdobeReader
       win_chocolatey:
         name: adobereader
         state: present
 
-    - name: Install VLC
+    - name: Instaluje VLC
       win_chocolatey:
         name: vlc
         state: present
 
-    - name: Install forticlientvpn
+    - name: Instaluje FortiClientVPN
       win_chocolatey:
         name: forticlientvpn
         state: present
