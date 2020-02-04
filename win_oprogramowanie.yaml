@@ -6,7 +6,7 @@
 
     - name: Instaluje OpenOffice z katalogu Software
       win_package:
-        path: C:\Software\OpenOffice.exe
+        path: C:\Software\AcroRdrDC1900820071_pl_PL.exe
         product_id: auto
         state: present
 
