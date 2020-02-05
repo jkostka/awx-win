@@ -21,7 +21,7 @@
     - win_reboot:
       when: result.reboot_required
  
-    - name: Zmieniam nazwę hosta na v-win-awx3
+    - name: Zmieniam nazwę hosta na v-win-awx4
       win_hostname:
         name: v-win-awx3
         register: result
